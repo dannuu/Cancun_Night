@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "590367055445",
+    "firebase_url": "https://cancunnight-34e4f.firebaseio.com",
+    "project_id": "cancunnight-34e4f",
+    "storage_bucket": "cancunnight-34e4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590367055445:android:802e391be69ab95b",
+        "android_client_info": {
+          "package_name": "com.example.daniel.cancun_night"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590367055445-csk9f7nk4kmpqn2sjt1aila8jj23u9p1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.daniel.cancun_night",
+            "certificate_hash": "f549b2e4024408b8a14c51fab3dc4f6b18325437"
+          }
+        },
+        {
+          "client_id": "590367055445-bhhhcig3sf2bce1u29d43nq8dur9tlk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeXsPzI3wcZCOGrk-qhnp3w9kQtWTyCuw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590367055445-bhhhcig3sf2bce1u29d43nq8dur9tlk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

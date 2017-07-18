@@ -1,47 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:checked="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-
+            android:color="@color/primaryColor" android:state_checked="true"
             android:title="@string/home_item" />
         <item
             android:id="@+id/nav_productos"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:color="@color/primaryColor" android:state_checked="true"
             android:title="@string/productos_item" />
         <item
             android:id="@+id/nav_carrito"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:color="@color/primaryColor" android:state_checked="true"
             android:title="@string/compras_item" />
         <item
             android:id="@+id/nav_ordenes"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:title="@string/ordenes_item" />
         <item
             android:id="@+id/nav_facturas"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:color="@color/primaryColor" android:state_checked="true"
             android:title="@string/facturas_item" />
         <item
             android:id="@+id/nav_opcion"
-            android:title="@string/opcion1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            android:title="@string/opcion1" />
 
 
         <!-- Sección de configuración -->
         <item
             android:id="@+id/configuration_section"
-            android:title="@string/configuracion_item"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+            android:title="@string/configuracion_item">
             <menu>
                 <item
                     android:id="@+id/nav_log_out"
                     android:icon="@android:drawable/ic_lock_power_off"
-                    android:title="@string/log_out_item"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                    android:title="@string/log_out_item" />
             </menu>
         </item>
     </group>

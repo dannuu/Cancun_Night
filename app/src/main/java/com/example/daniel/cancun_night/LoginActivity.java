@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -73,7 +74,7 @@ public class LoginActivity extends AppCompatActivity  implements GoogleApiClient
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(user != null){
                     goMainScreen();
-                  //  Toast.makeText(MainActivity.this, "All its ok!", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(LoginActivity.this, "All its ok!", Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -134,7 +135,7 @@ public class LoginActivity extends AppCompatActivity  implements GoogleApiClient
                 signInButton.setVisibility(View.VISIBLE);
 
                 if(!task.isSuccessful()){
-              //      Toast.makeText(MainActivity.this, "No se puedo autenticar", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(LoginActivity.this, "No se puedo autenticar", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -143,9 +144,9 @@ public class LoginActivity extends AppCompatActivity  implements GoogleApiClient
 
     private void goMainScreen() {
 
-   /*     Intent intent = new Intent(this,MenuNav.class);
+        Intent intent = new Intent(this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);   */
+        startActivity(intent);
     }
 
     @Override

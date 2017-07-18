@@ -17,7 +17,7 @@ import com.example.daniel.cancun_night.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
+import  static  android.media.CamcorderProfile.get;
 
 /**
  * Created by daniel on 21/06/2017.

@@ -3,20 +3,53 @@ package com.example.daniel.cancun_night.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import com.example.daniel.cancun_night.Adapter.Adapter;
+import com.example.daniel.cancun_night.Models.Propiedades;
 import com.example.daniel.cancun_night.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class PlayaFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
 
+
+public class PlayaFragment extends Fragment implements SearchView.OnQueryTextListener {
+
+    RecyclerView rv;
+
+    List<Propiedades> propiedades;
+    private ProgressBar progressBar;
+    Adapter adapter;
+
+
+
+
+    private FirebaseDatabase database;
 
     public PlayaFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+
+
     }
 
 
@@ -24,7 +57,74 @@ public class PlayaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_playa, container, false);
+        View v = inflater.inflate(R.layout.fragment_playa, container, false);
+
+
+
+
+        rv = (RecyclerView) v.findViewById(R.id.recyclerPropiedades); //buscamos el id del recyclerview
+        progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        propiedades = new ArrayList<>();
+
+        adapter = new Adapter(propiedades);
+
+        rv.setAdapter(adapter);
+
+
+        database = FirebaseDatabase.getInstance();
+        // progressBar.setVisibility(View.VISIBLE);
+        // progressBar.setVisibility(View.GONE);
+        DatabaseReference tiendaref = database.getReference("Categoria");
+
+
+        tiendaref.child("Playa").addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                propiedades.removeAll(propiedades);
+
+                for (DataSnapshot snapshot :
+                        dataSnapshot.getChildren()) {
+
+                    Propiedades propiedades = snapshot.getValue(Propiedades.class);
+                    PlayaFragment.this.propiedades.add(propiedades);
+                }
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        return v;
+
     }
 
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        newText = newText.toLowerCase();
+
+        List<Propiedades> newList = new ArrayList<>();
+        for(Propiedades propiedades : this.propiedades){
+
+            String name = propiedades.getName().toLowerCase();
+            if(name.contains(newText)){
+                newList.add(propiedades);
+            }
+        }
+        adapter.setFilter(newList);
+        return true;
+    }
 }

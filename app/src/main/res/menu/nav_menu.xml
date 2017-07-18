@@ -6,22 +6,22 @@
         <item
             android:id="@+id/nav_home"
             android:checked="true"
-            android:color="@color/primaryColor" android:state_checked="true"
+
             android:title="@string/home_item" />
         <item
             android:id="@+id/nav_productos"
-            android:color="@color/primaryColor" android:state_checked="true"
+
             android:title="@string/productos_item" />
         <item
             android:id="@+id/nav_carrito"
-            android:color="@color/primaryColor" android:state_checked="true"
+
             android:title="@string/compras_item" />
         <item
             android:id="@+id/nav_ordenes"
             android:title="@string/ordenes_item" />
         <item
             android:id="@+id/nav_facturas"
-            android:color="@color/primaryColor" android:state_checked="true"
+
             android:title="@string/facturas_item" />
         <item
             android:id="@+id/nav_opcion"

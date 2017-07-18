@@ -54,7 +54,8 @@
                         android:layout_toLeftOf="@+id/imageView"
                         android:paddingBottom="8dp"
                         android:text="Nombre"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        android:textColor="@color/colorAccent"/>
 
                     <ImageView
                         android:id="@+id/imageView"
@@ -72,7 +73,8 @@
                         android:layout_alignBaseline="@+id/nombre"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="false"
-                        android:text="Ubicación" />
+                        android:text="Ubicación"
+                        android:textColor="@color/colorAccent"/>
                 </RelativeLayout>
 
 
@@ -81,7 +83,8 @@
                     android:id="@+id/descripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLength="80" />
+                    android:maxLength="80"
+                    android:textColor="@color/colorAccent"/>
 
             </LinearLayout>
 
@@ -94,14 +97,14 @@
 
                 <Button
                     android:text="Ver Detalles"
-
+                    android:textColor="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/buttonSeeProduct"
                     android:layout_gravity="right"
                     style="@android:style/Widget.DeviceDefault.Button.Borderless"
                     android:elevation="0dp"
-                  />
+                    />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

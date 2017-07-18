@@ -2,10 +2,14 @@
 <resources>
     <color name="window_background">#e13e3c3c</color>
 
-    <color name="primaryColor">#1e1d1d</color>
-    <color name="primaryDarkColor">#e0181717</color>
+    <color name="primaryColor">#4e4d48</color>
+    <color name="primaryDarkColor">#f1181717</color>
     <color name="accentColor">#4e4d48</color>
     <color name="red">#ffffff</color>
     <color name="white">#ffffff</color>
     <color name="black">#f11d1111</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorContraste">#EDEDED</color>
 </resources>

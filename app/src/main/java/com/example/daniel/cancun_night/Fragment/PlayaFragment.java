@@ -1,6 +1,7 @@
 package com.example.daniel.cancun_night.Fragment;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.daniel.cancun_night.Adapter.Adapter;
 import com.example.daniel.cancun_night.Models.Propiedades;
@@ -60,9 +62,11 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
         View v = inflater.inflate(R.layout.fragment_playa, container, false);
 
 
+        rv = (RecyclerView) v.findViewById(R.id.recyclerPropiedades);
 
 
-        rv = (RecyclerView) v.findViewById(R.id.recyclerPropiedades); //buscamos el id del recyclerview
+
+        //buscamos el id del recyclerview
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 

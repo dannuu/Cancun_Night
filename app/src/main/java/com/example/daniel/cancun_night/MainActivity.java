@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -14,12 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.daniel.cancun_night.Fragment.PlaceholderFragment;
+import com.example.daniel.cancun_night.Fragment.HomesFragment;
 import com.example.daniel.cancun_night.Fragment.PlayaFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
      */
     private String drawerTitle;
     private DrawerLayout drawerLayout;
+    Button playButton,playButton2;
 
     private GoogleApiClient googleApiClient;
 
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     //Variables idiomas BD local
     public String cod,nom;
 
-    private TextView userName, emailUser, idiomaUser;
+    private TextView userName, emailUser, idiomaUser, txt1,txt2;
     private ImageView imgUser;
     private SQLiteDatabase db;
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
 
@@ -73,10 +76,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             selectItem(drawerTitle);
         }
 
+
+
         userName = (TextView)navigationView.getHeaderView(0).findViewById(R.id.username);
         emailUser = (TextView)navigationView.getHeaderView(0).findViewById(R.id.email);
         //  idiomaUser = (TextView)navigationView.getHeaderView(0).findViewById(R.id.textViewIdioma);
         imgUser = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.circle_image);
+
+
+
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -125,17 +134,52 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        //Pequeño bug hace que los botones y textos de inicio o home existan en todos las categorias con este codigo los escodemos
+                        playButton = (Button) findViewById(R.id.buttonEnglish);
+                        playButton.setVisibility(View.GONE);
+
+                        playButton2 = (Button) findViewById(R.id.buttonSpanish);
+                        playButton2.setVisibility(View.GONE);
+
+                        txt1 = (TextView) findViewById(R.id.textViewResultIdioma);
+                        txt2 = (TextView) findViewById(R.id.textViewIdioma);
+                        txt1.setVisibility(View.GONE);
+                        txt2.setVisibility(View.GONE);
                         int id = menuItem.getItemId();
                         boolean fragmentTansaction = false;
                         Fragment fragment = null;
 
                         //Entra a la funcion de las opciones de las categorias entrando a un fragment con su respectivo xml
                         switch (id) {
+
+                            case R.id.nav_home: {
+
+                                playButton = (Button) findViewById(R.id.buttonEnglish);
+                                playButton.setVisibility(View.VISIBLE);
+
+                                playButton2 = (Button) findViewById(R.id.buttonSpanish);
+                                playButton2.setVisibility(View.VISIBLE);
+
+                                txt1 = (TextView) findViewById(R.id.textViewResultIdioma);
+                                txt2 = (TextView) findViewById(R.id.textViewIdioma);
+                                txt1.setVisibility(View.VISIBLE);
+                                txt2.setVisibility(View.VISIBLE);
+
+
+                                fragment = new HomesFragment();
+                                fragmentTansaction = true;
+                                break;
+                            }
+
                             case R.id.nav_carrito: {
                                 fragment = new PlayaFragment();
                                 fragmentTansaction = true;
                                 break;
                             }
+
+
+
+
                         }
                         if (fragmentTansaction) {
 
@@ -184,20 +228,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     private void selectItem(String title) {
         // Enviar título como arguemento del fragmento
-        Bundle args = new Bundle();
-        args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
 
-        Fragment fragment = PlaceholderFragment.newInstance(title);
-        fragment.setArguments(args);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager
-                .beginTransaction()
-                .replace(R.id.main_content, fragment)
-                .commit();
 
-        drawerLayout.closeDrawers(); // Cerrar drawer
 
-        setTitle(title); // Setear título actual
+     // Setear título actual
 
     }
 

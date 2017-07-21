@@ -29,7 +29,9 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
     List<Propiedades> propiedades;
     Context context;
 
-    public Adapter(List<Propiedades> propiedades) {this.propiedades = propiedades; }
+    public Adapter(List<Propiedades> propiedades) {
+        this.propiedades = propiedades;
+    }
 
     @Override
     public ProductosviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -47,15 +49,15 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
 
        Glide.with(context).load(variable.getImg_icon()).into(holder.imgProducto);
         holder.txtNombre.setText(variable.getName());
-        holder.txtDescripcion.setText(variable.getDescripcion());
+      holder.txtDescripcion.setText(variable.getDescripcion());
         final int indice = position;
 
 
-        holder.BtnDetalles.setOnClickListener(new View.OnClickListener() {
+        /*  holder.BtnDetalles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-              /*  Intent intent = new Intent(context, details_prop.class  );
+              Intent intent = new Intent(context, details_prop.class  );
                 intent.putExtra("img",   variable.getImg_icon());
 
                 intent.putExtra("img_1",   variable.getImg_url());
@@ -66,9 +68,9 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
                 intent.putExtra("descripcion", variable.getDescripcion());
 
                 context.startActivity(intent);
-*/
+
             }
-        });
+        });*/
 
 
     }
@@ -90,7 +92,7 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
             imgProducto = (ImageView) itemView.findViewById(R.id.foto);
             txtNombre = (TextView) itemView.findViewById(R.id.nombre);
            txtDescripcion = (TextView) itemView.findViewById(R.id.descripcion);
-            BtnDetalles = (Button) itemView.findViewById(R.id.buttonSeeProduct);
+           BtnDetalles = (Button) itemView.findViewById(R.id.buttonSeeProduct);
 
         }
     }

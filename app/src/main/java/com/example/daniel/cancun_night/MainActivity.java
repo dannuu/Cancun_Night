@@ -1,6 +1,7 @@
 package com.example.daniel.cancun_night;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.daniel.cancun_night.Fragment.HomesFragment;
+import com.example.daniel.cancun_night.Fragment.ConfiguracionFragment;
 import com.example.daniel.cancun_night.Fragment.PlayaFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     private FirebaseAuth firebaseAuth;
     private  FirebaseAuth.AuthStateListener firebaseAuthListener;
-
     //Variables idiomas BD local
     public String cod,nom;
 
@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         setContentView(R.layout.activity_main);
 
 
+        ConexionLocal usdbh =
+                new ConexionLocal(this, "DBNight", null, 2);
+        db = usdbh.getWritableDatabase();
 
 
         setToolbar(); // Setear Toolbar como action bar
@@ -135,16 +138,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         //Pequeño bug hace que los botones y textos de inicio o home existan en todos las categorias con este codigo los escodemos
-                        playButton = (Button) findViewById(R.id.buttonEnglish);
-                        playButton.setVisibility(View.GONE);
 
-                        playButton2 = (Button) findViewById(R.id.buttonSpanish);
-                        playButton2.setVisibility(View.GONE);
-
-                        txt1 = (TextView) findViewById(R.id.textViewResultIdioma);
-                        txt2 = (TextView) findViewById(R.id.textViewIdioma);
-                        txt1.setVisibility(View.GONE);
-                        txt2.setVisibility(View.GONE);
                         int id = menuItem.getItemId();
                         boolean fragmentTansaction = false;
                         Fragment fragment = null;
@@ -152,24 +146,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         //Entra a la funcion de las opciones de las categorias entrando a un fragment con su respectivo xml
                         switch (id) {
 
-                            case R.id.nav_home: {
-
-                                playButton = (Button) findViewById(R.id.buttonEnglish);
-                                playButton.setVisibility(View.VISIBLE);
-
-                                playButton2 = (Button) findViewById(R.id.buttonSpanish);
-                                playButton2.setVisibility(View.VISIBLE);
-
-                                txt1 = (TextView) findViewById(R.id.textViewResultIdioma);
-                                txt2 = (TextView) findViewById(R.id.textViewIdioma);
-                                txt1.setVisibility(View.VISIBLE);
-                                txt2.setVisibility(View.VISIBLE);
-
-
-                                fragment = new HomesFragment();
-                                fragmentTansaction = true;
-                                break;
-                            }
 
                             case R.id.nav_carrito: {
                                 fragment = new PlayaFragment();
@@ -178,6 +154,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             }
 
 
+                            case R.id.nav_opcion: {
+
+                                fragment = new ConfiguracionFragment();
+                                fragmentTansaction = true;
+                                break;
+                            }
 
 
                         }
@@ -233,6 +215,21 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
      // Setear título actual
 
+    }
+
+    public String getIdioma(){
+        Cursor c = db.rawQuery("SELECT codigo, nombre FROM idiomas", null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                cod = c.getString(0);
+                nom = c.getString(1);
+
+            } while(c.moveToNext());
+        }
+
+        return nom;
     }
 
     private void setUserData(FirebaseUser user) {

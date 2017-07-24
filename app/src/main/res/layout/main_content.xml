@@ -2,8 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:id="@+id/main_content">
+    >
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,43 +14,13 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-
-    <Button
-        android:id="@+id/buttonSpanish"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="23dp"
-        android:text="Spanish"
-        android:layout_below="@+id/textViewResultIdioma"
-        android:layout_alignParentStart="true" />
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/buttonEnglish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonSpanish"
-        android:layout_alignBottom="@+id/buttonSpanish"
-        android:layout_marginStart="61dp"
-        android:layout_toEndOf="@+id/buttonSpanish"
-        android:text="English" />
-
-    <TextView
-        android:id="@+id/textViewIdioma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Your Idioma Is:"
-        android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/textViewResultIdioma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:text="No ha seleccionado su idioma"
-        android:layout_below="@+id/textViewIdioma"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -15,8 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.daniel.cancun_night.Adapter.Adapter;
+import com.example.daniel.cancun_night.MainActivity;
 import com.example.daniel.cancun_night.Models.Propiedades;
 import com.example.daniel.cancun_night.R;
 import com.google.firebase.database.DataSnapshot;
@@ -61,8 +63,10 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_playa, container, false);
 
+        MainActivity activity = (MainActivity) getActivity(); //Agarramos de la actividad menu principal el valor del string
+        String recibeDato = activity.getIdioma(); // La guardamos en un resultado " recibe dato" para poder comparar el idioma
 
-        rv = (RecyclerView) v.findViewById(R.id.recyclerPropiedades);
+       rv = (RecyclerView) v.findViewById(R.id.recyclerPropiedades);
 
 
 
@@ -80,35 +84,33 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
         database = FirebaseDatabase.getInstance();
         // progressBar.setVisibility(View.VISIBLE);
         // progressBar.setVisibility(View.GONE);
-        DatabaseReference tiendaref = database.getReference("Categoria");
 
+    Toast.makeText(getActivity(),""+recibeDato, Toast.LENGTH_SHORT).show();
+    DatabaseReference tiendaref = database.getReference("Categoria");
+    tiendaref.child("Playa").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
 
-        tiendaref.child("Playa").addValueEventListener(new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            propiedades.removeAll(propiedades);
 
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                propiedades.removeAll(propiedades);
+            for (DataSnapshot snapshot :
+                    dataSnapshot.getChildren()) {
 
-                for (DataSnapshot snapshot :
-                        dataSnapshot.getChildren()) {
-
-                    Propiedades propiedades = snapshot.getValue(Propiedades.class);
-                    PlayaFragment.this.propiedades.add(propiedades);
-                }
-                adapter.notifyDataSetChanged();
-
+                Propiedades propiedades = snapshot.getValue(Propiedades.class);
+                PlayaFragment.this.propiedades.add(propiedades);
             }
+            adapter.notifyDataSetChanged();
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+        }
 
-            }
-        });
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
 
+        }
+    });
+    return v;
+}
 
-        return v;
-
-    }
 
 
     @Override

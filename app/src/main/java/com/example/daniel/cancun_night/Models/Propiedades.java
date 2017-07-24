@@ -10,6 +10,7 @@ public class Propiedades {
     String descripcion;
     String img_icon;
 
+
     public Propiedades() {
     }
 

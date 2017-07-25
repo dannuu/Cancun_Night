@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.daniel.cancun_night.Models.Propiedades;
 import com.example.daniel.cancun_night.R;
+import com.example.daniel.cancun_night.VerDetalleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,24 +54,19 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
         final int indice = position;
 
 
-        /*  holder.BtnDetalles.setOnClickListener(new View.OnClickListener() {
+       holder.BtnDetalles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-              Intent intent = new Intent(context, details_prop.class  );
+              Intent intent = new Intent(context, VerDetalleActivity.class  );
                 intent.putExtra("img",   variable.getImg_icon());
-
-                intent.putExtra("img_1",   variable.getImg_url());
-                intent.putExtra("img_2",   variable.getImg_url_2());
-                intent.putExtra("img_3",   variable.getImg_url_3());
-
                 intent.putExtra("name", variable.getName());
                 intent.putExtra("descripcion", variable.getDescripcion());
 
                 context.startActivity(intent);
 
             }
-        });*/
+        });
 
 
     }

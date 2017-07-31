@@ -63,6 +63,10 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
                 intent.putExtra("name", variable.getName());
                 intent.putExtra("descripcion", variable.getDescripcion());
 
+                intent.putExtra("img_1",   variable.getImg_url());
+                intent.putExtra("img_2",   variable.getImg_url_2());
+                intent.putExtra("img_3",   variable.getImg_url_3());
+
                 context.startActivity(intent);
 
             }

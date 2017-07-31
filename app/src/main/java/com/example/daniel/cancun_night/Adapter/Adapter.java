@@ -67,6 +67,9 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
                 intent.putExtra("img_2",   variable.getImg_url_2());
                 intent.putExtra("img_3",   variable.getImg_url_3());
 
+                intent.putExtra("x_coor",   variable.getx_coor());
+                intent.putExtra("y_coor",   variable.gety_coor());
+
                 context.startActivity(intent);
 
             }

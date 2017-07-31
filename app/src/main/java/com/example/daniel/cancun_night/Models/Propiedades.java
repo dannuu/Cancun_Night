@@ -12,13 +12,16 @@ public class Propiedades {
     String img_url;
     String img_url_2;
     String img_url_3;
+    Double x_coor;
+    Double y_coor;
 
 
     public Propiedades() {
     }
 
 
-    public Propiedades(String name,String descripcion, String img_icon, String img_url,  String img_url_2, String img_url_3 ) {
+    public Propiedades(String name,String descripcion, String img_icon, String img_url,  String img_url_2, String img_url_3,
+                       Double x_coor,Double y_coor ) {
 
         this.name = name;
         this.descripcion = descripcion;
@@ -27,6 +30,9 @@ public class Propiedades {
         this.img_url = img_url;
         this.img_url_2 = img_url_2;
         this.img_url_3 = img_url_3;
+
+        this.x_coor = x_coor;
+        this.y_coor = y_coor;
 
     }
 
@@ -68,6 +74,17 @@ public class Propiedades {
     public void setImg_url_3(String img_url_3) {
         this.img_url_3 = img_url_3;
     }
+
+
+    public Double getx_coor() {
+        return x_coor;
+    }
+
+
+    public Double gety_coor() {
+        return y_coor;
+    }
+
 
 
 

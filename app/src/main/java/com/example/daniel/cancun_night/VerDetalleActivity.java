@@ -50,6 +50,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         private String[] arrayURL;
 
     String  name,img,img_1,img_2,img_3,imgnew, descripcion;
+    Double  x_coor, y_coor;
 
     int[] sampleImages = {R.mipmap.ic_load,R.mipmap.ic_loading,R.mipmap.ic_loading};
     String[] sampleTitles = {"Orange","Orange","Orange"};
@@ -126,9 +127,13 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
             name = extras.getString("name");
             descripcion = extras.getString("descripcion");
 
+            x_coor = extras.getDouble("x_coor");
+            y_coor = extras.getDouble("y_coor");
+
             Glide.with(this).load(img).into(imgProducto);
             nombreProducto.setText(name);
             descProducto.setText(descripcion);
+
 
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
@@ -149,7 +154,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
     public void onMapReady(GoogleMap googleMap) {
         // Add a marker in Sydney, Australia,
         // and move the map's camera to the same location.
-        LatLng cancun = new LatLng(21.0833,-86.85);
+        LatLng cancun = new LatLng(x_coor,y_coor);
         googleMap.addMarker(new MarkerOptions().position(cancun)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(cancun));

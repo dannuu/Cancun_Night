@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         final ActionBar ab = getSupportActionBar();
         if (ab != null) {
             // Poner ícono del drawer toggle
-            ab.setHomeAsUpIndicator(R.mipmap.ic_menu);
+            ab.setHomeAsUpIndicator(R.drawable.ic_menu);
             ab.setDisplayHomeAsUpEnabled(true);
         }
 

@@ -18,6 +18,12 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,7 +35,7 @@ import com.synnapps.carouselview.ViewListener;
 import static android.R.attr.name;
 import static com.example.daniel.cancun_night.R.id.descripcion;
 
-public class VerDetalleActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class VerDetalleActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,OnMapReadyCallback {
 
 
         private FirebaseAuth firebaseAuth;
@@ -45,7 +51,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
 
     String  name,img,img_1,img_2,img_3,imgnew, descripcion;
 
-    int[] sampleImages = {R.mipmap.ic_loading,R.mipmap.ic_loading,R.mipmap.ic_loading};
+    int[] sampleImages = {R.mipmap.ic_load,R.mipmap.ic_loading,R.mipmap.ic_loading};
     String[] sampleTitles = {"Orange","Orange","Orange"};
 
 
@@ -58,7 +64,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_detalle);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
+            getSupportFragmentManager().findFragmentById(R.id.map);
 
        carouselView = (CarouselView) findViewById(R.id.carouselView);
         customCarouselView = (CarouselView) findViewById(R.id.customCarouselView);
@@ -124,6 +130,10 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
             nombreProducto.setText(name);
             descProducto.setText(descripcion);
 
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+
 
     }
 
@@ -133,6 +143,20 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         UID_user = user.getUid();
         //descProducto.setText(UID_user);
 
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        // Add a marker in Sydney, Australia,
+        // and move the map's camera to the same location.
+        LatLng cancun = new LatLng(21.0833,-86.85);
+        googleMap.addMarker(new MarkerOptions().position(cancun)
+                .title("Marker in Sydney"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(cancun));
+        /*Uri gmmIntentUri = Uri.parse("google.navigation:q=21.0833,-86.85");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);*/
     }
 
 

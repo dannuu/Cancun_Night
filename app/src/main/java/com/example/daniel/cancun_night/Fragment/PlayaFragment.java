@@ -111,6 +111,22 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
     return v;
 }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(this);
+        searchView.setQueryHint("Search");
+        //MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        super.onCreateOptionsMenu(menu, inflater);
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
 
 
     @Override

@@ -3,11 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.daniel.cancun_night.Fragment.PlayaFragment">>
+    tools:context="com.example.daniel.cancun_night.Fragment.PlayaFragment">
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerPropiedades"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="299dp"
+        android:layout_marginTop="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

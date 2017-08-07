@@ -7,8 +7,13 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
+    <include
+        layout="@layout/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <!-- Contenido Principal -->
-    <include layout="@layout/main_content" />MainActivity
+
 
     <!-- Menú Deslizante -->
     <android.support.design.widget.NavigationView
@@ -17,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemIconTint="#ffeb54"
+        app:itemIconTint="#e71a0f"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu" />
 

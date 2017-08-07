@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         ConexionLocal usdbh =
                 new ConexionLocal(this, "DBNight", null, 2);
         db = usdbh.getWritableDatabase();

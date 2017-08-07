@@ -6,38 +6,64 @@
         <item
             android:id="@+id/nav_home"
             android:checked="true"
-
             android:title="@string/home_item" />
         <item
-            android:id="@+id/nav_productos"
-
+            android:id="@+id/nav_restaurante"
+            android:icon="@drawable/restaurant_icon"
             android:title="@string/productos_item" />
         <item
-            android:id="@+id/nav_carrito"
+            android:id="@+id/nav_playa"
 
-            android:title="@string/compras_item" />
+            android:icon="@drawable/beacah"
+            android:title="@string/compras_item"
+            android:layout_gravity="start"/>
         <item
-            android:id="@+id/nav_ordenes"
-            android:title="@string/ordenes_item" />
-        <item
-            android:id="@+id/nav_facturas"
+            android:id="@+id/nav_bar"
+            android:icon="@drawable/cerveza_icon"
+            android:title="@string/ordenes_item"
 
-            android:title="@string/facturas_item" />
+            />
         <item
-            android:id="@+id/nav_opcion"
-            android:title="Configuracion" />
+            android:id="@+id/nav_antros"
+            android:icon="@drawable/icon_dance"
+            android:title="@string/facturas_item"
+
+            />
+
+        <item
+            android:id="@+id/nav_plazas"
+            android:icon="@drawable/place_icon"
+            android:title="Market Square"
+            />
+
+
+        <item
+            android:id="@+id/nav_servicios"
+            android:icon="@drawable/service_icon"
+            android:title="Services"
+     />
+
 
 
         <!-- Sección de configuración -->
         <item
+            app:border_color="@android:color/white"
             android:id="@+id/configuration_section"
             android:title="@string/configuracion_item">
             <menu>
                 <item
+                    app:border_color="@android:color/white"
                     android:id="@+id/nav_log_out"
-                    android:icon="@android:drawable/ic_lock_power_off"
+                    android:icon="@drawable/logout"
                     android:title="@string/log_out_item" />
+
+                <item
+                    app:border_color="@android:color/white"
+                    android:id="@+id/nav_idioma"
+                    android:icon="@drawable/lenguaje"
+                    android:title="Idiomas" />
             </menu>
+
         </item>
     </group>
 

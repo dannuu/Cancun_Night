@@ -8,8 +8,8 @@
     <color name="white">#ffffff</color>
     <color name="red">#f7f7f7</color>
     <color name="yellow">#efe9c31c</color>
-    <color name="reddark">#f32e0308</color>
-    <color name="black">#fd2d0106</color>
+    <color name="reddark">#b72e0308</color>
+    <color name="black">#fb232323</color>
     <color name="blacknight">#f1130606</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

@@ -147,14 +147,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         switch (id) {
 
 
-                            case R.id.nav_carrito: {
+                            case R.id.nav_playa: {
                                 fragment = new PlayaFragment();
                                 fragmentTansaction = true;
                                 break;
                             }
 
 
-                            case R.id.nav_opcion: {
+                            case R.id.nav_restaurante: {
 
                                 fragment = new ConfiguracionFragment();
                                 fragmentTansaction = true;

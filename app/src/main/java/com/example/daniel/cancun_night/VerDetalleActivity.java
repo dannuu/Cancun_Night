@@ -52,7 +52,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
     String  name,img,img_1,img_2,img_3,imgnew, descripcion;
     Double  x_coor, y_coor;
 
-    int[] sampleImages = {R.mipmap.ic_load,R.mipmap.ic_loading,R.mipmap.ic_loading};
+    int[] sampleImages = {R.drawable.loading,R.drawable.loading,R.drawable.loading,};
     String[] sampleTitles = {"Orange","Orange","Orange"};
 
 

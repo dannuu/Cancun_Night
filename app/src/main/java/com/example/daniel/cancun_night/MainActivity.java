@@ -154,11 +154,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             }
 
 
-                            case R.id.nav_restaurante: {
+                            case R.id.nav_idioma: {
 
                                 fragment = new ConfiguracionFragment();
                                 fragmentTansaction = true;
                                 break;
+                            }
+                            case R.id.nav_log_out: {
+
+                               logOut();
+
                             }
 
 

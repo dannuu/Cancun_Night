@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.daniel.cancun_night.Fragment.ConfiguracionFragment;
 import com.example.daniel.cancun_night.Fragment.PlayaFragment;
+import com.example.daniel.cancun_night.Fragment.RestauranteFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -154,6 +155,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                 break;
                             }
 
+                            case R.id.nav_restaurante: {
+                                fragment = new RestauranteFragment();
+                                fragmentTansaction = true;
+                                break;
+                            }
+
 
                             case R.id.nav_idioma: {
 
@@ -164,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             case R.id.nav_log_out: {
 
                                logOut();
-
+                                break;
                             }
 
 
@@ -253,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     // Pasar de una actividad a otra
     private void goLogInScreen() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

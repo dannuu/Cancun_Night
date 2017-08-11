@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PlayaFragment extends Fragment implements SearchView.OnQueryTextListener {
+public class RestauranteFragment extends Fragment implements SearchView.OnQueryTextListener {
 
     RecyclerView rv;
 
@@ -42,7 +42,7 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
 
     private FirebaseDatabase database;
 
-    public PlayaFragment() {
+    public RestauranteFragment() {
         // Required empty public constructor
     }
 
@@ -85,7 +85,7 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
 
     Toast.makeText(getActivity(),""+recibeDato, Toast.LENGTH_SHORT).show();
     DatabaseReference tiendaref = database.getReference("Categoria");
-    tiendaref.child("Playa").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
+    tiendaref.child("Restaurante").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -95,7 +95,7 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
                     dataSnapshot.getChildren()) {
 
                 Propiedades propiedades = snapshot.getValue(Propiedades.class);
-                PlayaFragment.this.propiedades.add(propiedades);
+                RestauranteFragment.this.propiedades.add(propiedades);
             }
             adapter.notifyDataSetChanged();
 
@@ -112,7 +112,7 @@ public class PlayaFragment extends Fragment implements SearchView.OnQueryTextLis
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.main, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(this);
         searchView.setQueryHint("Search");
         //MenuItem searchItem = menu.findItem(R.id.action_search);

@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemIconTint="#e71a0f"
+        app:itemIconTint="#ece518"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu" />
 

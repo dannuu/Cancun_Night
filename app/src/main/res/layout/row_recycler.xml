@@ -10,11 +10,12 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="#2c2a30"
         card_view:cardCornerRadius="@dimen/cardview_default_radius"
         card_view:cardElevation="@dimen/cardview_default_elevation"
-        card_view:cardUseCompatPadding="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        card_view:cardUseCompatPadding="true">
 
 
         <LinearLayout
@@ -26,7 +27,7 @@
             <ImageView
                 android:id="@+id/foto"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/altura_imagen_item" />
+                android:layout_height="196dp" />
 
             <!-- Cuerpo -->
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,37 +50,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_toLeftOf="@+id/imageView"
+
                         android:paddingBottom="8dp"
                         android:text="Nombre"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                        android:textColor="@color/black"/>
+                        android:textColor="#ffffff" />
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/ubicacion"
-                        android:layout_marginLeft="24dp"
-                        android:layout_toLeftOf="@+id/ubicacion" />
 
-                    <TextView
-                        android:id="@+id/ubicacion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@+id/nombre"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentTop="false"
-                        android:text="Ubicación" />
                 </RelativeLayout>
 
 
                 <TextView
-                    android:textColor="@color/black"
                     android:id="@+id/descripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLength="80" />
+                    android:maxLength="80"
+                    android:textColor="#ffffff" />
 
             </LinearLayout>
 
@@ -98,7 +84,7 @@
                     android:layout_gravity="right"
                     android:elevation="0dp"
                     android:text="Ver Detalles"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#ece518" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

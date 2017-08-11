@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "590367055445",
-    "firebase_url": "https://cancunnight-34e4f.firebaseio.com",
-    "project_id": "cancunnight-34e4f",
-    "storage_bucket": "cancunnight-34e4f.appspot.com"
+    "project_number": "17864614682",
+    "firebase_url": "https://cancunnight-d3a23.firebaseio.com",
+    "project_id": "cancunnight-d3a23",
+    "storage_bucket": "cancunnight-d3a23.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:590367055445:android:802e391be69ab95b",
+        "mobilesdk_app_id": "1:17864614682:android:a37196d2c0037403",
         "android_client_info": {
-          "package_name": "com.example.daniel.cancun_night"
+          "package_name": "com.example.daniel.cancunnight"
         }
       },
       "oauth_client": [
         {
-          "client_id": "590367055445-csk9f7nk4kmpqn2sjt1aila8jj23u9p1.apps.googleusercontent.com",
+          "client_id": "17864614682-aijpttq4riukbinbjmlu7b0nm8jtsttl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.daniel.cancun_night",
+            "package_name": "com.example.daniel.cancunnight",
             "certificate_hash": "f549b2e4024408b8a14c51fab3dc4f6b18325437"
           }
         },
         {
-          "client_id": "590367055445-bhhhcig3sf2bce1u29d43nq8dur9tlk7.apps.googleusercontent.com",
+          "client_id": "17864614682-sctumu1ee2sokm28kfb7gqrs5np6luc3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCeXsPzI3wcZCOGrk-qhnp3w9kQtWTyCuw"
+          "current_key": "AIzaSyAwXBhOINrL4XzPQHQpyjccHFATt6KMZYM"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "590367055445-bhhhcig3sf2bce1u29d43nq8dur9tlk7.apps.googleusercontent.com",
+              "client_id": "17864614682-sctumu1ee2sokm28kfb7gqrs5np6luc3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

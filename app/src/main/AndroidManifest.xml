@@ -27,7 +27,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCpx8F8ciwN0oKaDmC8NCK-WcWEg_U4BoE" />
 
-        <activity android:name=".LoginActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,6 +39,12 @@
             android:name=".VerDetalleActivity"
             android:label="@string/title_activity_ver_detalle"
             android:theme="@style/Theme.JanusShop"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+        </activity>
+
+
     </application>
 
 </manifest>

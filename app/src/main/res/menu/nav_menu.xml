@@ -44,6 +44,13 @@
      />
 
 
+        <item
+            android:id="@+id/nav_realAumentada"
+            android:icon="@drawable/virtual_icon"
+            android:title="Realidad Aumantada"
+            />
+
+
 
         <!-- Sección de configuración -->
         <item

@@ -1,6 +1,7 @@
 package com.example.daniel.cancun_night;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
@@ -44,12 +46,19 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         private FirebaseDatabase database;
         private String UID_user;
 
-        TextView nombreProducto, precioProducto, descProducto;
+        TextView nombreProducto, telefonoProducto,webProducto, descProducto;
         ImageView imgProducto;
-        Button add_to_cart;
+        Button ref_link;
         private String[] arrayURL;
 
-    String  name,img,img_1,img_2,img_3,imgnew, descripcion;
+    String  name;
+    String img;
+    String img_1;
+    String img_2;
+    String img_3;
+    String web;
+    int telefono;
+    String descripcion;
     Double  x_coor, y_coor;
 
     int[] sampleImages = {R.drawable.loading,R.drawable.loading,R.drawable.loading,};
@@ -67,7 +76,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             getSupportFragmentManager().findFragmentById(R.id.map);
 
-       carouselView = (CarouselView) findViewById(R.id.carouselView);
+        carouselView = (CarouselView) findViewById(R.id.carouselView);
         customCarouselView = (CarouselView) findViewById(R.id.customCarouselView);
         carouselLabel = (TextView) findViewById(R.id.carouselLabel);
         customCarouselLabel = (TextView) findViewById(R.id.customCarouselLabel);
@@ -129,6 +138,9 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
 
             x_coor = extras.getDouble("x_coor");
             y_coor = extras.getDouble("y_coor");
+            web = extras.getString("web");
+            telefono = extras.getInt("telefono");
+
 
             Glide.with(this).load(img).into(imgProducto);
             nombreProducto.setText(name);
@@ -138,6 +150,29 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
+
+            FloatingActionButton link = (FloatingActionButton) findViewById(R.id.buttom_link);
+            link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String url = web;
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+            });
+
+
+            FloatingActionButton tel = (FloatingActionButton) findViewById(R.id.buttom_tel);
+            tel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                    callIntent.setData(Uri.parse("tel:"+telefono));
+
+                    startActivity(callIntent);
+                }
+            });
 
 
     }

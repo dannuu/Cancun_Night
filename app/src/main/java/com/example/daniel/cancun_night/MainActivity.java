@@ -167,6 +167,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                 break;
                             }
 
+                            case R.id.nav_realAumentada: {
+                                Toast.makeText(MainActivity.this, "Manda actividad intent", Toast.LENGTH_SHORT).show();
+                                break;
+                            }
+
 
                             case R.id.nav_idioma: {
 

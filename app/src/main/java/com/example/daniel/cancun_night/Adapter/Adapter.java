@@ -70,6 +70,9 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
                 intent.putExtra("x_coor",   variable.getx_coor());
                 intent.putExtra("y_coor",   variable.gety_coor());
 
+                intent.putExtra("web",   variable.get_web());
+                intent.putExtra("telefono",   variable.get_tel());
+
                 context.startActivity(intent);
 
             }
@@ -85,7 +88,7 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
 
     public static class ProductosviewHolder extends RecyclerView.ViewHolder{
 
-        TextView txtNombre, txtPrecio, txtDescripcion,txtDescripcionEnglish;
+        TextView txtNombre, txtDescripcion ;
         ImageView imgProducto;
         Button BtnDetalles;
 
@@ -95,6 +98,8 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
             imgProducto = (ImageView) itemView.findViewById(R.id.foto);
             txtNombre = (TextView) itemView.findViewById(R.id.nombre);
            txtDescripcion = (TextView) itemView.findViewById(R.id.descripcion);
+
+
            BtnDetalles = (Button) itemView.findViewById(R.id.buttonSeeProduct);
 
         }

@@ -191,7 +191,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         // and move the map's camera to the same location.
         LatLng cancun = new LatLng(x_coor,y_coor);
         googleMap.addMarker(new MarkerOptions().position(cancun)
-                .title("Marker in Sydney"));
+                .title(name));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(cancun));
         /*Uri gmmIntentUri = Uri.parse("google.navigation:q=21.0833,-86.85");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);

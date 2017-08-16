@@ -50,6 +50,11 @@
             android:title="Realidad Aumantada"
             />
 
+        <item
+            android:id="@+id/nav_rutas"
+            android:title="Rutas Camiones"
+            />
+
 
 
         <!-- Sección de configuración -->

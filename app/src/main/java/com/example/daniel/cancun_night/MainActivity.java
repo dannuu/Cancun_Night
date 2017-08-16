@@ -172,6 +172,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                 break;
                             }
 
+                            case R.id.nav_rutas: {
+                          //      Intent intent = new Intent(MainActivity.this, rutas.class  );
+                            //    startActivity(intent);
+                              //  break;
+                            }
+
 
                             case R.id.nav_idioma: {
 

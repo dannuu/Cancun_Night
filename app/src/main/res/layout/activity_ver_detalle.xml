@@ -199,7 +199,7 @@
                   android:name="com.google.android.gms.maps.SupportMapFragment"
                   android:layout_width="match_parent"
                   android:layout_height="350px"
-                  map:cameraZoom="20"
+                  map:cameraZoom="15"
                   map:mapType="terrain"
                   tools:context="com.example.daniel.cancun_night.VerDetalleActivity" />
 

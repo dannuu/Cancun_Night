@@ -52,11 +52,11 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
         private String[] arrayURL;
 
     String  name;
-    String img;
+    String img_icon;
     String img_1;
     String img_2;
     String img_3;
-    String web;
+    String page_url,email;
     int telefono;
     String descripcion;
     Double  x_coor, y_coor;
@@ -125,10 +125,10 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
 
 
             Bundle extras = getIntent().getExtras();
-            img = extras.getString("img");
-            img_1 = extras.getString("img_1");
-            img_2 = extras.getString("img_2");
-            img_3 = extras.getString("img_3");
+            img_icon = extras.getString("img_icon");
+            img_1 = extras.getString("img_url");
+            img_2 = extras.getString("img_url_2");
+            img_3 = extras.getString("img_url_3");
 
 
             //  Toast.makeText(getApplicationContext(), getUrlFirebase().length, Toast.LENGTH_SHORT).show();
@@ -138,11 +138,13 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
 
             x_coor = extras.getDouble("x_coor");
             y_coor = extras.getDouble("y_coor");
-            web = extras.getString("web");
+            page_url = extras.getString("page_url");
             telefono = extras.getInt("telefono");
 
+            email = extras.getString("email");
 
-            Glide.with(this).load(img).into(imgProducto);
+
+            Glide.with(this).load(img_icon).into(imgProducto);
             nombreProducto.setText(name);
             descProducto.setText(descripcion);
 
@@ -155,7 +157,7 @@ public class VerDetalleActivity extends AppCompatActivity implements GoogleApiCl
             link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String url = web;
+                    String url = page_url;
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(url));
                     startActivity(i);

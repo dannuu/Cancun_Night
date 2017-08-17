@@ -25,6 +25,7 @@ import com.example.daniel.cancun_night.Fragment.BaresFragment;
 import com.example.daniel.cancun_night.Fragment.ConfiguracionFragment;
 import com.example.daniel.cancun_night.Fragment.PlayaFragment;
 import com.example.daniel.cancun_night.Fragment.RestauranteFragment;
+import com.example.daniel.cancun_night.Fragment.Servicios_publicFragment;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -172,10 +173,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                 break;
                             }
 
+                            case R.id.nav_servicios: {
+                                fragment = new Servicios_publicFragment();
+                                fragmentTansaction = true;
+                                break;
+                            }
+
                             case R.id.nav_rutas: {
-                          //      Intent intent = new Intent(MainActivity.this, rutas.class  );
-                            //    startActivity(intent);
-                              //  break;
+                          Intent intent = new Intent(MainActivity.this, rutas.class  );
+                                startActivity(intent);
+                                break;
                             }
 
 

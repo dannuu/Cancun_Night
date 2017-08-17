@@ -59,19 +59,21 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ProductosviewHolder> 
             public void onClick(View v) {
 
               Intent intent = new Intent(context, VerDetalleActivity.class  );
-                intent.putExtra("img",   variable.getImg_icon());
+                intent.putExtra("img_icon",   variable.getImg_icon());
                 intent.putExtra("name", variable.getName());
                 intent.putExtra("descripcion", variable.getDescripcion());
 
-                intent.putExtra("img_1",   variable.getImg_url());
-                intent.putExtra("img_2",   variable.getImg_url_2());
-                intent.putExtra("img_3",   variable.getImg_url_3());
+                intent.putExtra("img_url",   variable.getImg_url());
+                intent.putExtra("img_url_2",   variable.getImg_url_2());
+                intent.putExtra("img_url_3",   variable.getImg_url_3());
 
                 intent.putExtra("x_coor",   variable.getx_coor());
                 intent.putExtra("y_coor",   variable.gety_coor());
 
-                intent.putExtra("web",   variable.get_web());
+                intent.putExtra("page_url",   variable.get_web());
                 intent.putExtra("telefono",   variable.get_tel());
+
+                intent.putExtra("email",   variable.get_email());
 
                 context.startActivity(intent);
 

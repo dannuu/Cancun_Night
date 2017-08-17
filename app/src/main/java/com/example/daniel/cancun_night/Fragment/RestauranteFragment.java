@@ -85,7 +85,7 @@ public class RestauranteFragment extends Fragment implements SearchView.OnQueryT
 
     Toast.makeText(getActivity(),""+recibeDato, Toast.LENGTH_SHORT).show();
     DatabaseReference tiendaref = database.getReference("Categoria");
-    tiendaref.child("Restaurante").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
+    tiendaref.child("Restaurantes").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {

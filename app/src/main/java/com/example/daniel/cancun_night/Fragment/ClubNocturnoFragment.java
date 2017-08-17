@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BaresFragment extends Fragment implements SearchView.OnQueryTextListener {
+public class ClubNocturnoFragment extends Fragment implements SearchView.OnQueryTextListener {
 
     RecyclerView rv;
 
@@ -42,7 +42,7 @@ public class BaresFragment extends Fragment implements SearchView.OnQueryTextLis
 
     private FirebaseDatabase database;
 
-    public BaresFragment() {
+    public ClubNocturnoFragment() {
         // Required empty public constructor
     }
 
@@ -85,7 +85,7 @@ public class BaresFragment extends Fragment implements SearchView.OnQueryTextLis
 
     Toast.makeText(getActivity(),""+recibeDato, Toast.LENGTH_SHORT).show();
     DatabaseReference tiendaref = database.getReference("Categoria");
-    tiendaref.child("Bares").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
+    tiendaref.child("Club Nocturno").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -95,7 +95,7 @@ public class BaresFragment extends Fragment implements SearchView.OnQueryTextLis
                     dataSnapshot.getChildren()) {
 
                 Propiedades propiedades = snapshot.getValue(Propiedades.class);
-                BaresFragment.this.propiedades.add(propiedades);
+                ClubNocturnoFragment.this.propiedades.add(propiedades);
             }
             adapter.notifyDataSetChanged();
 

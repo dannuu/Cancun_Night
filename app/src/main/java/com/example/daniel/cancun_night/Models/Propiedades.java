@@ -15,16 +15,17 @@ public class Propiedades {
     Double x_coor;
     Double y_coor;
 
-    String web;
-    int telefono;
+    String page_url;
 
+    int telefono;
+    String email;
 
     public Propiedades() {
     }
 
 
     public Propiedades(String name,String descripcion, String img_icon, String img_url,  String img_url_2, String img_url_3,
-                       Double x_coor,Double y_coor,String web,int telefono) {
+                       Double x_coor,Double y_coor,String page_url,int telefono,String email ) {
 
         this.name = name;
         this.descripcion = descripcion;
@@ -37,8 +38,9 @@ public class Propiedades {
         this.x_coor = x_coor;
         this.y_coor = y_coor;
 
-        this.web = web;
+        this.page_url = page_url;
         this.telefono=telefono;
+        this.email=email;
 
     }
 
@@ -94,9 +96,15 @@ public class Propiedades {
     }
     public void set_tel(int telefono) {this.telefono = telefono;}
 
-    public String get_web() {return web;}
-    public void set_web(String web) {
-        this.web = web;
+    public String get_web() {return page_url;}
+    public void set_web(String page_url) {
+        this.page_url = page_url;
+    }
+
+
+    public String get_email() {return email;}
+    public void set_email(String email) {
+        this.email = email;
     }
 
 

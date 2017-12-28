@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Cancun_night.iml" filepath="$PROJECT_DIR$/Cancun_night.iml" />
-      <module fileurl="file://C:\Users\Dannuu Gomez\Documents\Android\Cancun_night\Cancun_night.iml" filepath="C:\Users\Dannuu Gomez\Documents\Android\Cancun_night\Cancun_night.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Dannuu Gomez\Documents\Android\Cancun_night\app\app.iml" filepath="C:\Users\Dannuu Gomez\Documents\Android\Cancun_night\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "17864614682-903qv9kpjfdnsrcnlj95p0o8a6pju6ag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.daniel.cancunnight",
+            "certificate_hash": "358b762a16ac272d1df624aff6b277bbeb57b83e"
+          }
+        },
+        {
           "client_id": "17864614682-aijpttq4riukbinbjmlu7b0nm8jtsttl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

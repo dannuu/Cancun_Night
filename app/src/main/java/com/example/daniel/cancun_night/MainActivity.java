@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.daniel.cancun_night.Fragment.BaresFragment;
+import com.example.daniel.cancun_night.Fragment.ClubNocturnoFragment;
 import com.example.daniel.cancun_night.Fragment.ConfiguracionFragment;
 import com.example.daniel.cancun_night.Fragment.PlayaFragment;
 import com.example.daniel.cancun_night.Fragment.RestauranteFragment;
@@ -164,6 +165,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             }
                             case R.id.nav_bar: {
                                 fragment = new BaresFragment();
+                                fragmentTansaction = true;
+                                break;
+                            }
+
+                            case R.id.nav_antros: {
+                                fragment = new ClubNocturnoFragment();
                                 fragmentTansaction = true;
                                 break;
                             }

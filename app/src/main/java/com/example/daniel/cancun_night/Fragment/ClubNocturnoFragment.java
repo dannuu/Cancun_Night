@@ -85,7 +85,7 @@ public class ClubNocturnoFragment extends Fragment implements SearchView.OnQuery
 
     Toast.makeText(getActivity(),""+recibeDato, Toast.LENGTH_SHORT).show();
     DatabaseReference tiendaref = database.getReference("Categoria");
-    tiendaref.child("Club Nocturno").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
+    tiendaref.child("Club Nocturnos").orderByChild("idioma").equalTo(recibeDato).addValueEventListener(new ValueEventListener() {
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
